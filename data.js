@@ -43,11 +43,11 @@ dataset = `
         },
         {
             "question": "Ich bin bereit, meine Komfortzone zu verlassen, um meine Ziele zu erreichen.",
-            "dimensions": { "Risikobereitschaft": 1.0, "Selbstkontrolle": 0.5 }
+            "dimensions": { "Risikobereitschaft": 1.0, "Selbstkontrolle": 0.1 }
         },
         {
-            "question": "Ich kann meine Belohnungswünsche gut kontrollieren, selbst wenn ich müde oder gestresst bin.",
-            "dimensions": { "Selbstkontrolle": 1.0, "Belohnungssensitivität": -0.5 }
+            "question": "Ich kann Versuchungen gut wiederstehen",
+            "dimensions": { "Selbstkontrolle": 1.0, "Belohnungssensitivität": -0.15 }
         },
         {
             "question": "Ich suche aktiv nach positiven sozialen Interaktionen.",
@@ -60,6 +60,46 @@ dataset = `
         {
             "question": "Ich fühle mich unwohl, wenn sich meine Tagesabläufe oft ändern.",
             "dimensions": { "Gewohnheitsbildung": 1.0, "Denkflexibilität": -0.2 }
+        },
+        {
+            "question": "Ich brauche oft eine äußere Belohnung, um mich für eine Aufgabe zu motivieren.",
+            "dimensions": { "Belohnungssensitivität": 1.0, "Selbstkontrolle": -0.3 }
+        },
+        {
+            "question": "Ich kann mich leicht in die Emotionen anderer hineinversetzen.",
+            "dimensions": { "Soziale Sensitivität": 1.0, "Emotionale Reaktivität": 0.4 }
+        },
+        {
+            "question": "Ich bevorzuge es, nach einem festen Plan zu arbeiten, anstatt spontan zu handeln.",
+            "dimensions": { "Denkflexibilität": -0.8, "Gewohnheitsbildung": 0.9 }
+        },
+        {
+            "question": "Ich finde es aufregend, neue und unbekannte Dinge auszuprobieren.",
+            "dimensions": { "Risikobereitschaft": 1.0, "Denkflexibilität": 0.7 }
+        },
+        {
+            "question": "Ich werde schnell unruhig oder frustriert, wenn Dinge nicht nach Plan laufen.",
+            "dimensions": { "Emotionale Reaktivität": 1.0, "Denkflexibilität": -0.5 }
+        },
+        {
+            "question": "Ich neige dazu, langfristige Ziele über kurzfristige Vergnügungen zu stellen.",
+            "dimensions": { "Selbstkontrolle": 1.0, "Belohnungssensitivität": -0.5 }
+        },
+        {
+            "question": "Ich reagiere oft übermäßig auf kleine Misserfolge.",
+            "dimensions": { "Emotionale Reaktivität": 1.0, "Selbstkontrolle": -0.4 }
+        },
+        {
+            "question": "Ich kann mich gut auf eine einzelne Aufgabe konzentrieren, ohne mich ablenken zu lassen.",
+            "dimensions": { "Selbstkontrolle": 1.0, "Denkflexibilität": -0.3 }
+        },
+        {
+            "question": "Ich finde es wichtig, dass jeder Tag eine gewisse Struktur hat.",
+            "dimensions": { "Gewohnheitsbildung": 1.0, "Denkflexibilität": -0.4 }
+        },
+        {
+            "question": "Ich lasse mich leicht von meinen Emotionen mitreißen, auch wenn ich es eigentlich nicht möchte.",
+            "dimensions": { "Emotionale Reaktivität": 1.0, "Selbstkontrolle": -0.6 }
         }
     ]
 }

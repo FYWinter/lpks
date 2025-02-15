@@ -21,11 +21,22 @@ function answer(choice)
     if (choice <= 0 || choice > 5)
         return;
 
+    if (choice == 1)
+        choice = -1;
+    else if (choice == 2)
+        choice = -0.5;
+    else if (choice == 3)
+        choice = 0;
+    else if (choice == 4)
+        choice = 0.5;
+    else if (choice == 5)
+        choice = 1;
+
     // Update relevant dimensions
     var curr_question_dimensions = questions[current_question - 1].dimensions;
     for (var key in curr_question_dimensions) {
         dimensions[key].value += curr_question_dimensions[key] * choice;
-        dimensions[key].max = Math.max(dimensions[key].max, Math.abs(dimensions[key].value));
+        dimensions[key].max += Math.abs(dimensions[key].value);
     }
 
     // Update progress

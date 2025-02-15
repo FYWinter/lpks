@@ -63,6 +63,22 @@ header p {
     cursor: pointer;
 }
 
+#answer5 {
+    color: #0a771b;
+}
+#answer4 {
+    color: #04380c;
+}
+#answer3 {
+    color: #000000;
+}
+#answer2 {
+    color: #580303;
+}
+#answer1 {
+    color: #8c0707;
+}
+
 #main #result {
     display: flex;
     flex-direction: row;
@@ -121,5 +137,8 @@ header p {
 @media screen and (max-width: 650px) {
     #main {
         width: 100%;
+    }
+    .dimension h2 {
+        font-size: 1.2em;
     }
 }
