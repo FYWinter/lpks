@@ -5,11 +5,12 @@ var questions = data.content;
 var questions_count = questions.length;
 var dimensions = {};
 var current_question = 1;
+var completed_count = 1;
 var scores = [], percentages = [], values = {};
 
 function loadQuestions() {
     document.getElementById("question").innerHTML = questions[0].question;
-    document.getElementById("progress").innerHTML = current_question + "/" + questions_count;
+    document.getElementById("progress").innerHTML = completed_count + "/" + questions_count;
     // Create new dimension object with max, value and name from Parameters
     for (var i = 0; i < data.parameters.length; i++) {
         dimensions[data.parameters[i]] = { max: 0, value: 0, name: data.parameters[i] };
@@ -21,31 +22,51 @@ function answer(choice)
     if (choice <= 0 || choice > 5)
         return;
 
+
+    meta_gewichtung = 1.0;
     if (choice == 1)
+    {
         choice = -1;
+    }
     else if (choice == 2)
+    {
         choice = -0.5;
+        meta_gewichtung = 0.75;
+    }
     else if (choice == 3)
+    {
         choice = 0;
+        meta_gewichtung = 0;
+    }
     else if (choice == 4)
+    {
         choice = 0.5;
+        meta_gewichtung = 0.75;
+    }
     else if (choice == 5)
+    {
         choice = 1;
+    }
 
     // Update relevant dimensions
     var curr_question_dimensions = questions[current_question - 1].dimensions;
     for (var key in curr_question_dimensions) {
         dimensions[key].value += curr_question_dimensions[key] * choice;
-        dimensions[key].max += Math.abs(dimensions[key].value);
+        dimensions[key].max += Math.abs(dimensions[key].value) * meta_gewichtung;
     }
 
+    // Remove current question
+    questions.splice(current_question - 1, 1);
+    // New random question between 0 and questions.length
+    current_question = Math.floor(Math.random() * questions.length) + 1;
+    completed_count++;
+
     // Update progress
-    current_question++;
-    if (current_question > questions_count) {
+    if (completed_count > questions_count) {
         showResults();
     } else {
         document.getElementById("question").innerHTML = questions[current_question - 1].question;
-        document.getElementById("progress").innerHTML = current_question + "/" + questions_count;
+        document.getElementById("progress").innerHTML = completed_count + "/" + questions_count;
     }
 }
 
