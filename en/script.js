@@ -23,7 +23,7 @@ function answer(choice)
         return;
 
 
-    meta_gewichtung = 1.0;
+    meta_gewichtung = 1.25;
     if (choice == 1)
     {
         choice = -1;
@@ -31,7 +31,7 @@ function answer(choice)
     else if (choice == 2)
     {
         choice = -0.5;
-        meta_gewichtung = 0.75;
+        meta_gewichtung = 0.6;
     }
     else if (choice == 3)
     {
@@ -41,7 +41,7 @@ function answer(choice)
     else if (choice == 4)
     {
         choice = 0.5;
-        meta_gewichtung = 0.75;
+        meta_gewichtung = 0.6;
     }
     else if (choice == 5)
     {
@@ -49,11 +49,15 @@ function answer(choice)
     }
 
     // Update relevant dimensions
+    console.log("Before:");
+    console.log(dimensions);
     var curr_question_dimensions = questions[current_question - 1].dimensions;
     for (var key in curr_question_dimensions) {
         dimensions[key].value += curr_question_dimensions[key] * choice;
         dimensions[key].max += Math.abs(dimensions[key].value) * meta_gewichtung;
     }
+    console.log("After:");
+    console.log(dimensions);
 
     // Remove current question
     questions.splice(current_question - 1, 1);
