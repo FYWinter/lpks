@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LPKS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="loadQuestions()">
+    <header>
+        <h1>LPKS</hjson>
+        <p>Laienhaftes Persönlichkeits Kategorisierungssystem (LPKS)<br>Lay Personality Categorization System</p>
+    </header>
+
+    <div id="main">
+        <h2 id="question">Question</h2>
+        <p id="progress">1/10</p>
+        <ul>
+            <li><button id="answer5" onclick="answer(5)">Very accurate</button></li>
+            <li><button id="answer4" onclick="answer(4)">Somewhat accurate</button></li>
+            <li><button id="answer3" onclick="answer(3)">Neutral</button></li>
+            <li><button id="answer2" onclick="answer(2)">Somewhat inaccurate</button></li>
+            <li><button id="answer1" onclick="answer(1)">Very inaccurate</button></li>
+        </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
